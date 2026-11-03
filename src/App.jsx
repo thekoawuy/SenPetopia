@@ -1,10 +1,10 @@
 // ✏️ Dữ liệu mẫu. Sau này thay bằng dữ liệu lấy từ API ASP.NET.
 const CATEGORIES = [
-  { icon: '🍖', name: 'Thức ăn' },
-  { icon: '🧸', name: 'Đồ chơi' },
-  { icon: '👕', name: 'Quần áo' },
-  { icon: '🎀', name: 'Phụ kiện' },
-  { icon: '🧴', name: 'Vệ sinh & chăm sóc' },
+  { icon: '', name: 'Thức ăn' },
+  { icon: '', name: 'Đồ chơi' },
+  { icon: '', name: 'Quần áo' },
+  { icon: '', name: 'Phụ kiện' },
+  { icon: '', name: 'Vệ sinh & chăm sóc' },
 ]
 
 const PRODUCTS = [
@@ -22,25 +22,25 @@ export default function App() {
   return (
     <>
       <header className="bar">
-        <a href="#" className="brand">🐾 SenPetopia</a>
+        <a href="#" className="brand"> SenPetopia</a>
         <form className="search" role="search" onSubmit={(e) => e.preventDefault()}>
           <input type="search" placeholder="Tìm thức ăn, đồ chơi, phụ kiện…" aria-label="Tìm sản phẩm" />
         </form>
         <div className="bar-actions">
           <a href="#dang-nhap" className="link">Đăng nhập</a>
-          <a href="#gio-hang" className="btn btn-primary">Giỏ hàng</a>
+          <a href="#gio-hang" className="btn">Giỏ hàng</a>
         </div>
       </header>
 
       <main>
-        <section className="hero">
+        <section className="hero">  
           <div className="hero-text">
             <p className="eyebrow">Sản phẩm & phụ kiện thú cưng</p>
             <h1>Đúng đồ, đúng size, đúng với bé nhà bạn</h1>
             <p className="lead">Thức ăn, đồ chơi, quần áo và phụ kiện cho chó mèo, giao tận nhà.</p>
-            <a className="btn btn-primary" href="#san-pham">Mua sắm ngay</a>
+            {/* <a className="btn btn-primary" href="#san-pham">Mua sắm ngay</a> */}
           </div>
-          <div className="hero-art" aria-hidden="true"><span>🐕</span><span>🐈</span><span>🛍️</span></div>
+         {/* <div className="hero-art" aria-hidden="true"><span>🐕</span><span>🐈</span><span>🛍️</span></div>*/}
         </section>
 
         <section className="block" aria-labelledby="h-dm">
@@ -52,26 +52,11 @@ export default function App() {
           </ul>
         </section>
 
-        <section id="san-pham" className="block" aria-labelledby="h-sp">
-          <h2 id="h-sp">Sản phẩm nổi bật</h2>
-          <ul className="grid">
-            {PRODUCTS.map((p) => (
-              <li key={p.id} className="card product">
-                <span className="thumb" aria-hidden="true">🖼️</span>
-                <span className="tag">{p.cat}</span>
-                <h3>{p.name}</h3>
-                <div className="row">
-                  <strong className="price">{money(p.price)}</strong>
-                  <span className={p.inStock ? 'stock ok' : 'stock out'}>{p.inStock ? 'Còn hàng' : 'Hết hàng'}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
+        
       </main>
 
       <footer>
-        <span>🐾 SenPetopia</span>
+        <span> SenPetopia</span>
         <span>© {new Date().getFullYear()} SenPetopia. Mọi quyền được bảo lưu.</span>
       </footer>
     </>
